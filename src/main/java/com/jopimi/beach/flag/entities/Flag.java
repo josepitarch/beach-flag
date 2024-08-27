@@ -6,12 +6,12 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "flag")
+@Table(name = "beach_flag_color")
 @EntityListeners(FlagEntityListener.class)
 public class Flag {
 
   @Id
-  private String id;
+  private Integer id;
 
   private String color;
 }
