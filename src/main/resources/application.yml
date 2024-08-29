@@ -2,21 +2,17 @@ spring:
   application:
     name: beach-flag
   datasource:
-    url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
-    name: testdb
-  sql:
-    init:
-      mode: always
+    url: jdbc:postgresql://poorly-enjoyed-anemone.data-1.euc1.tembo.io:5432/postgres
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: ${POSTGRES_PASSWORD}
   jpa:
     hibernate:
-      ddl-auto: create
-    show-sql: true
+      ddl-auto: none
+    show-sql: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
-    defer-datasource-initialization: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: beach-flag
 server:
-  port: 80
+  port: 8080
