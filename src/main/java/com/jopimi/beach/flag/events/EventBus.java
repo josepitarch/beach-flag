@@ -1,6 +1,5 @@
 package com.jopimi.beach.flag.events;
 
-import org.hibernate.annotations.Comment;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Sinks;

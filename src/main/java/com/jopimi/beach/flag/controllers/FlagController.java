@@ -33,9 +33,9 @@ public class FlagController {
   }
 
   @PatchMapping("/flag")
-  public Mono<String> patchFlag(@RequestBody Map<String, String> flag) {
+  public Mono<Map<String, String>> patchFlag(@RequestBody Map<String, String> flag) {
     var updatedFlag = flagService.updateFlag(flag.get("color"));
-    return Mono.just(updatedFlag.getColor());
+    return Mono.just(Map.of("color", updatedFlag.getColor()));
   }
 
 }
